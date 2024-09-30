@@ -30,7 +30,15 @@ h1 {
   gap: 10px;
 }
 
-.drum {
+.drum1,
+.drum2,
+.drum3,
+.drum4,
+.drum5,
+.drum6,
+.drum7,
+.drum8,
+.drum9 {
   padding: 20px;
   font-size: 20px;
   border: none;

@@ -1,38 +1,79 @@
-document.querySelectorAll('.drum').forEach(button => {
-    button.addEventListener('click', () => {
-        playSound(button.getAttribute('data-sound'));
-        animateButton(button.getAttribute('data-sound'));
-    });
+document.querySelector(".drum1").addEventListener("click", function () {
+  let boom = new Audio("boom.wav");
+  boom.play();
+});
+document.querySelector(".drum2").addEventListener("click", function () {
+  let clap = new Audio("clap.wav");
+  clap.play();
+});
+document.querySelector(".drum3").addEventListener("click", function () {
+  let hihat = new Audio("hihat.wav");
+  hihat.play();
+});
+document.querySelector(".drum4").addEventListener("click", function () {
+  let kick = new Audio("kick.wav");
+  kick.play();
+});
+document.querySelector(".drum5").addEventListener("click", function () {
+  let openhat = new Audio("openhat.wav");
+  openhat.play();
+});
+document.querySelector(".drum6").addEventListener("click", function () {
+  let ride = new Audio("ride.wav");
+  ride.play();
+});
+document.querySelector(".drum6").addEventListener("click", function () {
+  let ride = new Audio("ride.wav");
+  ride.play();
+});
+document.querySelector(".drum7").addEventListener("click", function () {
+  let snare = new Audio("snare.wav");
+  snare.play();
+});
+document.querySelector(".drum8").addEventListener("click", function () {
+  let tink = new Audio("tink.wav");
+  tink.play();
+});
+document.querySelector(".drum9").addEventListener("click", function () {
+  let tom = new Audio("tom.wav");
+  tom.play();
 });
 
-document.addEventListener('keydown', event => {
-    const keyMap = {
-        'KeyA': 'boom',
-        'KeyS': 'clap',
-        'KeyD': 'hihat',
-        'KeyF': 'kick',
-        'KeyG': 'openhat',
-        'KeyH': 'ride',
-        'KeyJ': 'snare',
-        'KeyK': 'tink',
-        'KeyL': 'tom'
-    };
-    const sound = keyMap[event.code];
-    if (sound) {
-        playSound(sound);
-        animateButton(sound);
-    }
+document.querySelector("body").addEventListener("keypress", function (target) {
+  if (target.key.toLowerCase() === "a") {
+    let boom = new Audio("boom.wav");
+    boom.play();
+  }
+  if (target.key.toLowerCase() === "s") {
+    let clap = new Audio("clap.wav");
+    clap.play();
+  }
+  if (target.key.toLowerCase() === "d") {
+    let hihat = new Audio("hihat.wav");
+    hihat.play();
+  }
+  if (target.key.toLowerCase() === "f") {
+    let kick = new Audio("kick.wav");
+    kick.play();
+  }
+  if (target.key.toLowerCase() === "g") {
+    let openhat = new Audio("openhat.wav");
+    openhat.play();
+  }
+  if (target.key.toLowerCase() === "h") {
+    let ride = new Audio("ride.wav");
+    ride.play();
+  }
+  if (target.key.toLowerCase() === "j") {
+    let snare = new Audio("snare.wav");
+    snare.play();
+  }
+  if (target.key.toLowerCase() === "k") {
+    let tink = new Audio("tink.wav");
+    tink.play();
+  }
+  if (target.key.toLowerCase() === "l") {
+    let tom = new Audio("tom.wav");
+    tom.play();
+  }
 });
-
-function playSound(sound) {
-    const audio = new Audio(`${sound}.wav`);
-    audio.play();
-}
-
-function animateButton(sound) {
-    const button = document.querySelector(`.drum[data-sound="${sound}"]`);
-    if (button) {
-        button.classList.add('active');
-        setTimeout(() => button.classList.remove('active'), 100);
-    }
-}
